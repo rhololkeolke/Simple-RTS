@@ -131,6 +131,8 @@ public class SimpleModel implements Model {
 						break;
 				}
 				built = actual >= required;
+				if(!built)
+					break;
 			}
 			if (built)
 				break;
