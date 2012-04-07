@@ -286,6 +286,14 @@ public class SimpleModel implements Model {
 						u.setTask(UnitTask.Attack);
 						break;
 					}
+					case COMPOUNDDEPOSIT:
+					{
+						if (u.getCurrentCargoAmount() > 0)
+							u.setTask(u.getCurrentCargoType()==ResourceType.GOLD?UnitTask.Gold:UnitTask.Wood);
+						else
+							u.setTask(UnitTask.Idle);
+						break;
+					}
 					case PRIMITIVEDEPOSIT:
 					{
 						if (u.getCurrentCargoAmount() > 0)
